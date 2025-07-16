@@ -72,6 +72,16 @@ def update_timer():
             status_label.config(text="Status: Break Time!")
             current_time = short_break_time
 
+        # Log the completion
+        log_study_session()
+
+        #Update the timer label aand restart
+        minutes = current_time / 60
+        seconds = current_time % 60
+        timer_label.config(text=f"{minutes:02d}:{seconds:02d}")
+
+        start_timer() # Automatically restart for the next session
+
 
 
 
@@ -82,6 +92,7 @@ def update_timer():
 root = tk.Tk()
 root.title("Smart Study Assistant")
 root.geometry("800x600")
+root.configure(bg="#2c3e50")
 
 # ----------Frames----------
 # Create frames for Layout
@@ -98,6 +109,28 @@ todo_frame.pack(side='top', fill='both', expand=True)
 # Daily Study Log Frame inside the right_side_frame
 log_frame = tk.Frame(right_side_frame, padx=10, pady=10)
 log_frame.pack(side='bottom', fill='both', expand=True)
+
+# ----------Timer Widgets----------
+timer_title_label = tk.Label(timer_frame, text="Pomodoro Timer", font=("helvetica", 24, "bold"), fg="#ecf0f1", bg="#34495e")
+timer_title_label.pack(pady=10)
+
+status_label = tk.Label(timer_frame, text="Status: Ready", font=("Helvetica", 16), fg="#bdc3c7", bg="#34495e")
+status_label.pack(pady=5)
+
+timer_label = tk.Label(timer_frame, text="25:00", font=("Helvetica", 72, "bold"), fg="#ecf0f1", bg="#34495e")
+timer_label.pack(pady=20)
+
+button_frame = tk.Frame(timer_frame, bg="#34495e")
+button_frame.pack(pady=10)
+
+start_button = tk.Button(button_frame, text="Start", command=start_timer, font=("Helvetica", 12), bg="#27ae60", fg="white", activebackground="#2ecc71")
+start_button.pack(side='left', padx=5)
+
+pause_button = tk.Button(button_frame, text="Pause", command=pause_timer, font=("Helvetica", 12), bg="#f39c12", fg="white", activebackground="#f1c40f", state=tk.DISABLED)
+pause_button.pack(side='left', padx=5)
+
+reset_button = tk.Button(button_frame, text="Reset", command=reset_timer, font=("Helvetica", 12), bg="#e74c3c", fg="white", activebackground="#c0392b")
+reset_button.pack(side='left', padx=5)
 
 # Start the main loop
 root.mainloop()
