@@ -1,7 +1,7 @@
 import tkinter as tk
 from datetime import datetime
 
-# ----------Global Variables----------
+# ----------Global Variables---------
 #Timer Variables
 work_time = 25 * 60
 short_break_time = 5 * 60
@@ -11,9 +11,9 @@ is_running = False
 timer_id = None
 pomodoro_count = 0
 
-# ----------Helper Functions----------
+# ----------Helper Functions---------
 
-# ----------Pomodoro Functions----------
+# ----------Pomodoro Functions---------
 def start_timer():
     """Starts or resumes the timer."""
     global is_running
