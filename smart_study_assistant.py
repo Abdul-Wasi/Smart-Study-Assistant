@@ -1,7 +1,7 @@
 import tkinter as tk
 from datetime import datetime
 
-# ----------Global Variables-----------
+# ----------Global Variables---------------
 #Timer Variables
 work_time = 25 * 60
 short_break_time = 5 * 60
