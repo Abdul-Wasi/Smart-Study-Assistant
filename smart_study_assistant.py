@@ -11,7 +11,7 @@ is_running = False
 timer_id = None
 pomodoro_count = 0
 
-# ----------Helper Functions------------
+# ----------Helper Functions---------------
 
 # ----------Pomodoro Functions---------
 def start_timer():
