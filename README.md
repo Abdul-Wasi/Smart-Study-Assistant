@@ -12,7 +12,7 @@ This project was a valuable exercise in practical GUI development, reinforcing f
 
 ---
 
-## ✨ Features
+## ✨ Features.
 
 * **🍅 Pomodoro Timer:**
     * Helps users follow the widely-adopted 25-minute focused study sessions followed by short breaks (5 minutes) and longer breaks (15 minutes after every 4 sessions).
